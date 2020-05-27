@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Lista compra</title>
+</head>
+<body>
+    <div id="app">
+
+        <div class="container justify-content-center bg-info mt-5 p-5"> 
+
+            <h1 class="text-center">{{titulo}}</h1>
+
+            <div class="row ml-1 mb-2">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Introduce nuevo artículo" v-model="nuevaFruta" @keyup.enter="agregarFruta">   
+                </div>
+                <div class="col">
+                    <button class="btn btn-dark" @click="agregarFruta">Agregar</button>
+                </div>
+            </div>
+            
+
+            <ul>
+                <li v-for="fruta of frutas" class="mb-1">
+                <div class="input-group">
+                        <div>
+                            <input type="text" class="form-control" v-model.number="fruta.cantidad">
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-success" @click="fruta.cantidad++" type="button">+</button>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button" @click="fruta.cantidad--">-</button>
+                        </div>
+                        <div class="mx-2">
+                            - {{fruta.nombre}}
+                            <span v-if="fruta.cantidad === 0">- <strong class="text-danger">Sin Stock</strong></span> 
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h4 class="text-center">TOTAL: {{sumarFrutas}} artículos</h4>
+
+        </div>
+    </div>
+
+    
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>
