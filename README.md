@@ -6,7 +6,7 @@ video 3: https://www.youtube.com/watch?v=vK7JT3nUmFg&list=PLPl81lqbj-4J-gfAERGDC
 
 video 4: https://www.youtube.com/watch?v=4sF1Kifpaqs&list=PLPl81lqbj-4J-gfAERGDCdOQtVgRhSvIT&index=4
 
-<!-- Pasos:
+Pasos:
 
 - Creamos dos archivos, en este caso le pondremos de nombre listado.html y listado.js
 
@@ -66,4 +66,4 @@ agregarFruta(){
 
 - Perfecto, ahora queremos recopilar el total de cantidades, es decir , la suma de todas. Lo primero es crear el valor total en data y lo inicializamos a cero, luego necesitamos una función para desarrollar la suma de las cantidades, esta la manejaremos fuera de los metodos, utilizaremos los computed, estos tambien son un arreglo. creamos la función sumarFrutas() y dentro colocamos this.total = 0, luego creamos un recorrido con for(fruta of this.frutas) y dentro de este decimos que this.total += fruta.cantidad. Fuera del for colocamos un return this.total. Este for se ejecutará cada vez que se detecte un cambio en cantidad sin necesidad de estar llamandolo, he aquí la gracia de los computed. 
 
-Ahora necesitamos visualizar esto, vamos al listado.html y fuera del <ul> colocamos un <h4> y ponemos como valor TOTAL = y llamamos a la funcion creada anteriormente, así: {{sumarFrutas}}. lo comprobamos. -->
+Ahora necesitamos visualizar esto, vamos al listado.html y fuera del <ul> colocamos un <h4> y ponemos como valor TOTAL = y llamamos a la funcion creada anteriormente, así: {{sumarFrutas}}. lo comprobamos.
